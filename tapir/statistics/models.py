@@ -23,3 +23,9 @@ class PurchaseBasket(models.Model):
     first_net_amount = models.FloatField()  # VKNetto_SUM
     second_net_amount = models.FloatField()  # EKNetto_SUM
     discount = models.FloatField()  # Rabatt_SUM
+
+
+class CreditAccount(models.Model):
+    credit_date = models.DateField()
+    credit_amount = models.FloatField()
+    tapir_user = models.ForeignKey(TapirUser, on_delete=models.SET_NULL, null=True)
